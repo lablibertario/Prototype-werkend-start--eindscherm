@@ -7,7 +7,7 @@
 Obstacles obstacle1 =new Obstacles();
 Player player = new Player();
 Enemy enemies = new Enemy();
-Pu_exp exp = new Pu_exp();
+Pu_exp exp = new Pu_exp();        //ja het werkt
 Pu_slow slow = new Pu_slow();
 Pu_lives livespu = new Pu_lives();
 Lives lives = new Lives();

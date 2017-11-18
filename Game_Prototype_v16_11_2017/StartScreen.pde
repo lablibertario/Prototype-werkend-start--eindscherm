@@ -33,4 +33,7 @@ class StartScreen {
       stage = 2;
     }
   }
+  
+  void update(){
+  }
 }

@@ -7,71 +7,75 @@
 Obstacles obstacle1 =new Obstacles();
 Player player = new Player();
 Enemy enemies = new Enemy();
-Pu_exp exp = new Pu_exp();        //ja het werkt
+Pu_exp exp = new Pu_exp();        
 Pu_slow slow = new Pu_slow();
 Pu_lives livespu = new Pu_lives();
 Lives lives = new Lives();
 StartScreen start = new StartScreen();
 EndScreen end= new EndScreen();
-
+Score score = new Score();
+float punten;
 int stage = 1;
 int again;
 
 //Initialization of all classes
-void setup(){
-size(800, 600);
-background(51);
-player.init();
-lives.init();
-obstacle1.init();
-enemies.init();
-exp.init();
-slow.init();
-livespu.init();
-end.init();
-
+void setup() {
+  size(800, 600);
+  background(51);
+  player.init();
+  lives.init();
+  obstacle1.init();
+  enemies.init();
+  exp.init();
+  slow.init();
+  livespu.init();
+  end.init();
 }
 
 //Updating all classes
-void updateGame(){
-player.update();
-enemies.update();
-exp.update();
-slow.update();
-lives.update();
-livespu.update();
+void updateGame() {
+  player.update();
+  enemies.update();
+  exp.update();
+  slow.update();
+  lives.update();
+  livespu.update();
+  start.update();
+  end.update();
+  score.update();
 
-if (player.posY < 0){
-player.posY = 0;
-}
-if (player.posY > height-100){
-player.posY = height-100;
-}
-
-}
-
-void keyPressed(){
-if (keyCode == UP) {
-player.move(-height/6);
-}
-if(keyCode == DOWN) {
-player.move(height/6);
-}}
-
-void keyReleased(){
-player.move(0);
+  if (player.posY < 0) {
+    player.posY = 0;
+  }
+  if (player.posY > height-100) {
+    player.posY = height-100;
+  }
 }
 
+void keyPressed() {
+  if (keyCode == UP) {
+    player.move(-height/6);
+  }
+  if (keyCode == DOWN) {
+    player.move(height/6);
+  }
+}
 
-void drawGame(){
-background(51);
-player.draw();
-obstacle1.draw();
-enemies.draw();
-exp.draw();
-slow.draw();
-lives.draw();
-livespu.draw();
+void keyReleased() {
+  player.move(0);
+}
+
+
+void drawGame() {
+  background(51);
+  player.draw();
+  obstacle1.draw();
+  enemies.draw();
+  exp.draw();
+  slow.draw();
+  lives.draw();
+  livespu.draw();
+  score.draw();
 }
 
 void draw() {
@@ -80,7 +84,7 @@ void draw() {
     start.setup();
     start.draw();
     //zorgt er voor dat elkaar als game start je na game over eerst naar endscreen gaat
-    }
+  }
   if (stage ==2) {
     drawGame();
     updateGame();
@@ -92,10 +96,11 @@ void draw() {
     end.setup();
     end.draw();
     //vanuit de return van end.init() gaat hij naar juiste scherm, op dit moment nog alleen reset van game (werkt nog niet altijd even goed) 
-    if (again == 1){
+    if (again == 1) {
+      score.reset();
       setup();
       stage =1;
-      again = 2;
+      again = 3;
     }
   }
 }

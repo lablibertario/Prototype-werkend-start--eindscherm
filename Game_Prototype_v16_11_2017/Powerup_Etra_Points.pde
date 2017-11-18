@@ -30,20 +30,20 @@ velX = -5;
 }
 
 void draw(){
-  //Het aanmaken van alle enemies
+  //Het aanmaken van de power-up Extra points
   for(int i = 0; i < numObstac; i++){
     fill(0,255,255);
   rect(posX[i], posY[i],w,h);
   posX[i] += velX;
   
-  //Als de enemy voorbij de speler gaat spawned hij weer in een random lane
+  //Als de power-up Extra points voorbij de speler gaat spawned hij weer in een random lane
   if (posX[i] < 0) {
   posY[i] = lanes[(int) random(lanes.length)];
   posX[i] = width;
   }
   //Als de speler collide met de boost, dan krijgt hij 250 punten
   if (player.posX + player.w == posX[i] && player.posX <= posX[i] + w && player.posY == posY[i]){
-obstacle1.punten += 250;
+    punten += 250;
 posX[i] = width;
 
 }

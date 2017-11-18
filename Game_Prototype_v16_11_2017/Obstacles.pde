@@ -31,6 +31,7 @@ public class Obstacles {
         posX[i]= lanes2[(int) random(lanes2.length)];
       }
     }
+    
 
     h = 100;
     w = 50;
@@ -48,7 +49,7 @@ public class Obstacles {
       if (posX[i] <= 0) {
         posY[i] = lanes[(int) random(lanes.length)];
         posX[i] = width;
-        punten ++;
+        //punten ++;
       }
       //Als de speler een obstakel raakt, verliest hij een levenspunt en verdwijnt het obstakel van het scherm.
       if (player.posX + player.w >= posX[i] && player.posY == posY[i]) {
@@ -56,12 +57,13 @@ public class Obstacles {
         posX[i] = lanes2[(int) random(lanes2.length)];
       }
     }
-    //Dit laat de punten op het scherm zien
+   /* //Dit laat de punten op het scherm zien
     fill(255, 0, 0);
     textSize(20);
     text(punten, 750, 25);
+    */
   }
-
-  void update() {
+  
+    void update() {
   }
 }

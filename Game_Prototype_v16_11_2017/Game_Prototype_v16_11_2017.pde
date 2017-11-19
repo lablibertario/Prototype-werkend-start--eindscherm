@@ -4,6 +4,7 @@
 // Ik heb in de classes Enemy en Obstacles interacties op de levenspunten toegevoegd (wat er gebeurt als de player een object aanraakt)
 // Ik heb in Game_Prototype draw() ingericht in stages en heb de classes StartScreen en EndScreen aangemaakt (siebe)
 // Ik heb in de class Lives de exit vervangen voor stage=3 zodat bij game over naar Endscreen gaat
+// toegevoegd: pauze/resume functie en een mid-game exit
 Obstacles obstacle1 =new Obstacles();
 Player player = new Player();
 Enemy enemies = new Enemy();
@@ -55,9 +56,17 @@ void updateGame() {
 void keyPressed() {
   if (keyCode == UP) {
     player.move(-height/6);
-  }
-  if (keyCode == DOWN) {
+  } else if (keyCode == DOWN) {
     player.move(height/6);
+  } else if (keyCode == 'P') {
+    // noLoop(); zorgt ervoor dat de loop/draw wordt stopgezet met loop() gaat de loop/draw weer verder me waar het was voor de noLoop()
+    if (looping)
+      noLoop();
+  }
+  if (keyCode == 'R') {
+    loop();
+  } else if (keyCode =='E') {
+    exit();
   }
 }
 
@@ -76,6 +85,11 @@ void drawGame() {
   lives.draw();
   livespu.draw();
   score.draw();
+  textAlign(RIGHT);
+  textSize(25);
+  text("P = Pause", 790, 52);
+  text("R = Resume", 790, 79);
+  text("E = Exit", 790, 106);
 }
 
 void draw() {

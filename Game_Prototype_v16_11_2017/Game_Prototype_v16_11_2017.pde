@@ -5,6 +5,7 @@
 // Ik heb in Game_Prototype draw() ingericht in stages en heb de classes StartScreen en EndScreen aangemaakt (siebe)
 // Ik heb in de class Lives de exit vervangen voor stage=3 zodat bij game over naar Endscreen gaat
 // toegevoegd: pauze/resume functie en een mid-game exit
+// array voor lanes staat nu in de main.
 Obstacles obstacle1 =new Obstacles();
 Player player = new Player();
 Enemy enemies = new Enemy();

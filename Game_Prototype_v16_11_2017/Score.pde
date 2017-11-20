@@ -19,6 +19,10 @@ class Score {
       punten = punten + 0.1;
     }
    }
+   
+   void scoreBoard(){
+     
+   }
 
   void reset() {
     punten = 0;

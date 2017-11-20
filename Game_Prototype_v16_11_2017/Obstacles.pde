@@ -6,10 +6,10 @@ public class Obstacles {
   float randomLane;
   int direction;
   float velX, velY;
-  //color clr [] = new color [numObstac];
   int punten = 0;
 
   
+
   float[] lanes2 = new float[]{800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300};
   void init() {
     //deze loop bepaald waar de enemies terechtkomen bij de start
@@ -22,7 +22,7 @@ public class Obstacles {
         posX[i]= lanes2[(int) random(lanes2.length)];
       }
     }
-    
+
 
     h = 100;
     w = 50;
@@ -36,25 +36,41 @@ public class Obstacles {
       rect(posX[i], posY[i], w, h);
       posX[i] += velX;
 
+     
+      
+        //for (int j = i; j < numObstac; j++) 
+        //{
+          //if (posX[i] <= posX[j] + w &&
+          //    posX[i] >= posX[j] - w)  
+         // {
+         //     posY[j] = lanes[(int) random(lanes.length)];
+             
+         // }
+      //  }
+      
+
+
+
+
+
+
+
+
       //Als het obstakel het scherm verlaat dan spawned hij weer in een random lane
       if (posX[i] <= 0) {
         posY[i] = lanes[(int) random(lanes.length)];
         posX[i] = width;
-        //punten ++;
       }
+
       //Als de speler een obstakel raakt, verliest hij een levenspunt en verdwijnt het obstakel van het scherm.
       if (player.posX + player.w >= posX[i] && player.posY == posY[i]) {
         lives.aLives--;
         posX[i] = lanes2[(int) random(lanes2.length)];
       }
     }
-   /* //Dit laat de punten op het scherm zien
-    fill(255, 0, 0);
-    textSize(20);
-    text(punten, 750, 25);
-    */
   }
+
+  void update() {
   
-    void update() {
   }
 }

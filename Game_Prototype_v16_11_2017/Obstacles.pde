@@ -9,16 +9,7 @@ public class Obstacles {
   //color clr [] = new color [numObstac];
   int punten = 0;
 
-  //array voor het lanesysteem
-  float[] lanes = new float[6]; 
-  {
-    lanes[0] = 0;
-    lanes[1] = 100;
-    lanes[2] = 200;
-    lanes[3] = 300;
-    lanes[4] = 400;
-    lanes[5] = 500;
-  }
+  
   float[] lanes2 = new float[]{800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300};
   void init() {
     //deze loop bepaald waar de enemies terechtkomen bij de start

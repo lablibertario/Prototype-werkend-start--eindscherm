@@ -5,19 +5,6 @@ float posY [] = new float [numObstac];
 int velX, velY, h,w;
 int t = 0;
 
-//array voor het lanesysteem
-float[] lanes = new float[6]; {
-lanes[0] = 0;
-lanes[1] = 100;
-lanes[2] = 200;
-lanes[3] = 300;
-lanes[4] = 400;
-lanes[5] = 500;
-
-}
-
-
-
 void init(){
   //De loop dat de boost in een random lane terechtkomen
   for(int i = 0; i < numObstac; i++){

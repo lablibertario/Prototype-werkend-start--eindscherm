@@ -18,6 +18,7 @@ Score score = new Score();
 float punten;
 int stage = 1;
 int again;
+float[] lanes = new float[6];
 
 //Initialization of all classes
 void setup() {
@@ -31,6 +32,13 @@ void setup() {
   slow.init();
   livespu.init();
   end.init();
+
+  lanes[0] = 0;
+  lanes[1] = 100;
+  lanes[2] = 200;
+  lanes[3] = 300;
+  lanes[4] = 400;
+  lanes[5] = 500;
 }
 
 //Updating all classes

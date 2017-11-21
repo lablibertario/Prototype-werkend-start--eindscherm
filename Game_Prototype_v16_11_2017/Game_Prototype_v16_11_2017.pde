@@ -21,6 +21,9 @@ int stage = 1;
 int again;
 float[] lanes = new float[6];
 
+import processing.sound.*;
+SoundFile music;
+
 //Initialization of all classes
 void setup() {
   size(800, 600);
@@ -40,6 +43,9 @@ void setup() {
   lanes[3] = 300;
   lanes[4] = 400;
   lanes[5] = 500;
+//inladen van soundfile, bij tools moet je eerst de libarie voor sound downloaden voordat SoundFile werkt.
+  music = new SoundFile(this, "skyrim.mp3");
+  music.play();
 }
 
 //Updating all classes
@@ -71,12 +77,13 @@ void keyPressed() {
     // noLoop(); zorgt ervoor dat de loop/draw wordt stopgezet met loop() gaat de loop/draw weer verder me waar het was voor de noLoop()
     if (looping)
       noLoop();
-  }
-  if (keyCode == 'R') {
+  }else if (keyCode == 'R') {
     loop();
   } else if (keyCode =='E') {
     exit();
-  }
+  }else if (keyCode =='M'){ //stopt de muziek
+   music.stop(); 
+    }
 }
 
 void keyReleased() {
@@ -102,6 +109,7 @@ void drawGame() {
 }
 
 void draw() {
+
   if (stage ==1) {
     //haalt de setup en draw uit StartScreen
     start.setup();

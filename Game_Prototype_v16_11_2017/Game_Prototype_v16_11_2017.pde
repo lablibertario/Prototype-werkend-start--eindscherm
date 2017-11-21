@@ -106,6 +106,7 @@ void drawGame() {
   text("P = Pause", 790, 52);
   text("R = Resume", 790, 79);
   text("E = Exit", 790, 106);
+  text("M = Sound OFF",790, 131);
 }
 
 void draw() {

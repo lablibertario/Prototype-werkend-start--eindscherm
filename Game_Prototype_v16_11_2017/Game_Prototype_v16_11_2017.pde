@@ -1,11 +1,3 @@
-// Updates Prototype:
-// Ik heb in de main de classes Lives en Powerup_Lives toegevoegd aan de setup, update en draw
-// Ik heb de class Lives en Powerup_Lives aangemaakt
-// Ik heb in de classes Enemy en Obstacles interacties op de levenspunten toegevoegd (wat er gebeurt als de player een object aanraakt)
-// Ik heb in Game_Prototype draw() ingericht in stages en heb de classes StartScreen en EndScreen aangemaakt (siebe)
-// Ik heb in de class Lives de exit vervangen voor stage=3 zodat bij game over naar Endscreen gaat
-// toegevoegd: pauze/resume functie en een mid-game exit
-// array voor lanes staat nu in de main.
 Obstacles obstacle1 =new Obstacles();
 Player player = new Player();
 Enemy enemies = new Enemy();
@@ -43,7 +35,7 @@ void setup() {
   lanes[3] = 300;
   lanes[4] = 400;
   lanes[5] = 500;
-//inladen van soundfile, bij tools moet je eerst de libarie voor sound downloaden voordat SoundFile werkt.
+  //inladen van soundfile, bij tools moet je eerst de libarie voor sound downloaden voordat SoundFile werkt.
   music = new SoundFile(this, "skyrim.mp3");
   music.play();
 }
@@ -77,13 +69,13 @@ void keyPressed() {
     // noLoop(); zorgt ervoor dat de loop/draw wordt stopgezet met loop() gaat de loop/draw weer verder me waar het was voor de noLoop()
     if (looping)
       noLoop();
-  }else if (keyCode == 'R') {
+  } else if (keyCode == 'R') {
     loop();
   } else if (keyCode =='E') {
     exit();
-  }else if (keyCode =='M'){ //stopt de muziek
-   music.stop(); 
-    }
+  } else if (keyCode =='M') { //stopt de muziek
+    music.stop();
+  }
 }
 
 void keyReleased() {
@@ -106,7 +98,7 @@ void drawGame() {
   text("P = Pause", 790, 52);
   text("R = Resume", 790, 79);
   text("E = Exit", 790, 106);
-  text("M = Sound OFF",790, 131);
+  text("M = Sound OFF", 790, 131);
 }
 
 void draw() {

@@ -10,7 +10,7 @@ class EndScreen {
   PFont gameOver;
   PFont endText; 
   PFont scoreText;
-  
+
   void setup() {
     //laad de afbeelding in het mapje met met naam startScreen.jpg
     startScreen = loadImage("startScreen.jpg");
@@ -20,25 +20,25 @@ class EndScreen {
     gameOver = loadFont("gameOverFont.vlw");
     endText = loadFont("endTextFont.vlw");
     scoreText = loadFont("scoreTextFont.vlw");
-    }
-  
+  }
+
   void init() {
     //return vallue zodat er in Game_prototype gereset kan worden, of later naar andere schermen)
-    if (again == 1){
+    if (again == 1) {
       again = 1;
-      } else if (again == 2) {
-        again = 2;
-      }
+    } else if (again == 2) {
+      again = 2;
+    }
   }
 
 
   void draw() {
     textAlign(CENTER);
-    fill(255,3,3);
+    fill(255, 3, 3);
     textFont(gameOver);
-    text("Game Over",400, 225);
+    text("Game Over", 400, 225);
     textFont(scoreText);
-    text(round(punten),400,300);
+    text(round(punten), 400, 300);
     textFont(endText);
     text("TRY AGAIN PRESS LEFT", 200, 400);
     text("EXIT PRESS RIGHT", 600, 400);
@@ -46,13 +46,13 @@ class EndScreen {
     //keycode left zorgt ervoor dat je terug gaat naar stage 1 uiteindelijk
     if (keyCode == LEFT) {      
       again = 1; //gaat terug naar startscherm
-    } else if (keyCode == RIGHT){
-      exit(); // 
-    } else if (keyCode == UP){
+    } else if (keyCode == RIGHT) {
+      exit(); //
+    } else if (keyCode == UP) {
       again = 2;
     }
   }
-  
-  void update(){
+
+  void update() {
   }
 }

@@ -8,7 +8,7 @@ public class Obstacles {
   float velX, velY;
   int punten = 0;
 
-  
+
 
   float[] lanes2 = new float[]{800, 850, 900, 950, 1000, 1050, 1100, 1150, 1200, 1250, 1300};
   void init() {
@@ -24,8 +24,8 @@ public class Obstacles {
     }
 
 
-    h = 100;
-    w = 50;
+    h = 100; //De hoogte van het object
+    w = 50; // De breedte van het object
     velX = -5; //De snelheid waarmee de objecten bewegen
   }
 
@@ -36,18 +36,19 @@ public class Obstacles {
       rect(posX[i], posY[i], w, h);
       posX[i] += velX;
 
-     
-      
-        //for (int j = i; j < numObstac; j++) 
-        //{
-          //if (posX[i] <= posX[j] + w &&
-          //    posX[i] >= posX[j] - w)  
-         // {
-         //     posY[j] = lanes[(int) random(lanes.length)];
-             
-         // }
+
+
+      //for (int j = i; j < numObstac; j++) 
+      //{
+      //if (posX[i] <= posX[j] + w &&
+      //    posX[i] >= posX[j] - w && 
+      //    posY[i] == posY[j])  
+      // {
+      //     posY[j] = lanes[(int) random(lanes.length)];
+
+      // }
       //  }
-      
+
 
 
 
@@ -71,6 +72,5 @@ public class Obstacles {
   }
 
   void update() {
-  
   }
 }

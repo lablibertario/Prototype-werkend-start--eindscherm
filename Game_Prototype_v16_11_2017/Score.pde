@@ -3,7 +3,6 @@
 class Score {
   Pu_exp exp = new Pu_exp();
   void setup() {
-     
   }
 
   void draw() {
@@ -18,7 +17,7 @@ class Score {
       //inplaats van dat je punten krijgt voor elke vijand die voorbij komt krijg je nu 0.1 punt per frame
       punten = punten + 0.1;
     }
-   }
+  }
 
   void reset() {
     punten = 0;

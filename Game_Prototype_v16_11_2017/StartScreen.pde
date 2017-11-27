@@ -18,7 +18,7 @@ class StartScreen {
     title = loadFont("titleFont.vlw");
     startText = loadFont("startText.vlw");
   }
-  
+
   void draw() {
     // zorgt er voordat de text in uitlijnd in midden
     textAlign(CENTER);
@@ -33,7 +33,7 @@ class StartScreen {
       stage = 2;
     }
   }
-  
-  void update(){
+
+  void update() {
   }
 }

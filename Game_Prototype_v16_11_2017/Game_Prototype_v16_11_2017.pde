@@ -137,7 +137,7 @@ void keyReleased() {
 
 
 void drawGame() {
-  background(51);
+  background(bg1);
   player.draw();
   obstacle1.draw();
   enemies.draw();

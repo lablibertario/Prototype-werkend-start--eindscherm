@@ -32,8 +32,9 @@ public class Obstacles {
   void draw() {
     //Hier worden de obstakels aangemaakt
     for (int i = 0; i < numObstac; i++) {
-      fill(0, 0, 255);
-      rect(posX[i], posY[i], w, h);
+   //   fill(0, 0, 255);//
+   //   rect(posX[i], posY[i], w, h);//
+     image(img2, posX[i], posY[i],w,h);
       posX[i] += velX;
 
 

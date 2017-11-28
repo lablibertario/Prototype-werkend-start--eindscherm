@@ -108,7 +108,7 @@ void keyPressed() {
   } else if (keyCode =='E') {
     exit();
   } else if (keyCode =='M') { //stopt de muziek
-    music.stop();
+    //music.stop();
   }
 }
 

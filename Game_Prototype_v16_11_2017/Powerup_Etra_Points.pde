@@ -32,9 +32,6 @@ class Pu_exp {
       if (player.posX + player.w == posX[i] && player.posX <= posX[i] + w && player.posY == posY[i]) {
         punten += 250;
         posX[i] = width;
-        
-        //sound effect//
-          file3.play();
       }
     }
   }

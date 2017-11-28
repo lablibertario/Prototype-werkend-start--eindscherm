@@ -11,8 +11,8 @@ class Pu_exp {
       posX[i] = random(100, width);
     }
 
-    h = 20;
-    w = 20;
+    h = 30;
+    w = 30;
     velX = -5;
   }
 

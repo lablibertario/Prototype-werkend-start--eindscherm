@@ -13,6 +13,16 @@ int stage = 1;
 int again;
 float[] lanes = new float[6];
 
+//images//
+PImage img;
+PImage img2;
+PImage bg1;
+PImage bg2;
+PImage pow2;
+PImage pow3;
+PImage pow4;
+PImage plyr;
+
 import processing.sound.*;
 //Sound Files//
 //sound 1//
@@ -52,6 +62,15 @@ void setup() {
   lanes[4] = 400;
   lanes[5] = 500;
  
+   // Images must be in the "data" directory to load correctly
+  img = loadImage("enemy.png");
+  img2 = loadImage("collision.png"); 
+  bg1 = loadImage("bg1.jpg");   
+  bg2 = loadImage("bg2.jpg");   
+  pow2 = loadImage("powt.png");  
+  pow3 = loadImage("powh.png");  
+  pow4 = loadImage("pow4.png");   
+  plyr = loadImage("plyr.png"); 
   
   //inladen van soundfile uit de main map//
       //sound 1//

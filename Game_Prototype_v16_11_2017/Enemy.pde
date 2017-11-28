@@ -33,6 +33,9 @@ public class Enemy {
       if (player.posX + player.w >= posX[i] && player.posY == posY[i]) {
         lives.aLives--;
         posX[i] = width;
+        
+        //damage sound effect//
+        file4.play();
       }
     }
   }

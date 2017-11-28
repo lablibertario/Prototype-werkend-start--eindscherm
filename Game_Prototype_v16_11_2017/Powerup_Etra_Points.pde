@@ -19,9 +19,10 @@ class Pu_exp {
   void draw() {
     //Het aanmaken van de power-up Extra points
     for (int i = 0; i < numObstac; i++) {
-      fill(0, 255, 255);
-      rect(posX[i], posY[i], w, h);
-      posX[i] += velX;
+    //fill(0,255,255);
+  //rect(posX[i], posY[i],w,h);
+  image(pow4, posX[i], posY[i],w,h);
+  posX[i] += velX;
 
       //Als de power-up Extra points voorbij de speler gaat spawned hij weer in een random lane
       if (posX[i] < 0) {

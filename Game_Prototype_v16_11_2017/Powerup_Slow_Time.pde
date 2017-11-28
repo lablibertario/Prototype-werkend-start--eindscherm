@@ -33,9 +33,6 @@ class Pu_slow {
       if (player.posX + player.w == posX[i] && player.posX <= posX[i] + w && player.posY == posY[i]) {
         obstacle1.velX = -2.5;
         enemies.velX = -1.5;
-        
-        //sound effect//
-          file3.play();
       }
     }
     t++;

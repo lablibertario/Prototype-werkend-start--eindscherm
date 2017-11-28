@@ -11,8 +11,8 @@ class Pu_lives {
       posX[i] = random(800, width + 500);
     }
 
-    h = 20;
-    w = 20;
+    h = 30;
+    w = 30;
     velX = -5;
   }
 

@@ -8,10 +8,16 @@ public class Lives {
   void init() {
   }
   void draw() {
-    //Lives Display
-    fill(255, 0, 0);
-    textSize(20);
-    text(lives.aLives, 10, 25);
+//Lives Display
+fill(0,0,0);
+textSize(130);
+text(lives.aLives, 72, 72);
+
+fill(255,0,0);
+textSize(120);
+text(lives.aLives, 70, 70);
+
+      image(pow3, 70, 45);
 
     //Als alle lives gebruikt zijn sluit het spel af. (Te veranderen naar eindscherm)
     if (aLives < 1) {

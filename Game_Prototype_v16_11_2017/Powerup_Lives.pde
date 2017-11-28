@@ -32,9 +32,6 @@ class Pu_lives {
       if (player.posX + player.w == posX[i] && player.posX <= posX[i] + w && player.posY == posY[i] && lives.aLives != 5) {
         posX[i] = width;
         lives.aLives++;
-        
-        //sound effect//
-          file3.play();
       }
     }
   }

@@ -24,7 +24,7 @@ public class Obstacles {
     }
 
 
-    h = 100; //De hoogte van het object
+    h = 50; //De hoogte van het object
     w = 50; // De breedte van het object
     velX = -5; //De snelheid waarmee de objecten bewegen
   }

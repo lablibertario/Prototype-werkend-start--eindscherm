@@ -20,9 +20,10 @@ class Pu_slow {
   void draw() {
     //Het aanmaken van alle enemies
     for (int i = 0; i < numObstac; i++) {
-      fill(255, 255, 255);
-      rect(posX[i], posY[i], w, h);
-      posX[i] += velX;
+  //  fill(255,255,255);
+  //rect(posX[i], posY[i],w,h);
+    image(pow2, posX[i], posY[i],w,h);
+  posX[i] += velX;
 
       //Als de enemy voorbij de speler gaat spawned hij weer in een random lane
       if (posX[i] <0 ) {

@@ -14,23 +14,7 @@ int again;
 float[] lanes = new float[6];
 
 import processing.sound.*;
-//Sound Files//
-//sound 1//
-SoundFile file;
-String audioName1 = "starts.mp3";
-String path;
-//sound 2//
-SoundFile file2;
-String audioName2 = "loopt.mp3";
-String path2;
-//sound 3//
-SoundFile file3;
-String audioName3 = "beep.mp3";
-String path3;
-//sound 4//
-SoundFile file4;
-String audioName4 = "bop.wav";
-String path4;
+SoundFile music;
 
 //Initialization of all classes
 void setup() {
@@ -51,27 +35,9 @@ void setup() {
   lanes[3] = 300;
   lanes[4] = 400;
   lanes[5] = 500;
- 
-  
-  //inladen van soundfile uit de main map//
-      //sound 1//
-path = sketchPath(audioName1);
-file = new SoundFile(this, path);
-      
-      //sound 2//
-path2 = sketchPath(audioName2);
-file2 = new SoundFile(this, path2);
-//sound 2 start//
-file2.play();
-
-      //sound 3//
-path3 = sketchPath(audioName3);
-file3 = new SoundFile(this, path3);
-
-      //sound 4//
-path4 = sketchPath(audioName4);
-file4 = new SoundFile(this, path4);
-
+  //inladen van soundfile, bij tools moet je eerst de libarie voor sound downloaden voordat SoundFile werkt.
+  music = new SoundFile(this, "skyrim.mp3");
+  music.play();
 }
 
 //Updating all classes

@@ -51,6 +51,8 @@ class EndScreen {
     } else if (keyCode == UP) {
       again = 2;
     }
+    //stopt intro sound//
+file.stop();
   }
 
   void update() {

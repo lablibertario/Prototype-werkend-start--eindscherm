@@ -18,7 +18,7 @@ class StartScreen {
     title = loadFont("titleFont.vlw");
     startText = loadFont("startText.vlw");
   }
-  
+
   void draw() {
     // zorgt er voordat de text in uitlijnd in midden
     textAlign(CENTER);
@@ -31,6 +31,13 @@ class StartScreen {
     //zorgt dat je vanuit stage 1(startscreen) gaat naar stage 2 (de game zelf)
     if (key == ' ' ) {
       stage = 2;
+      //sound 1 start//
+      file.play();
+      //stopt intro sound//
+      file2.stop();
     }
+  }
+
+  void update() {
   }
 }

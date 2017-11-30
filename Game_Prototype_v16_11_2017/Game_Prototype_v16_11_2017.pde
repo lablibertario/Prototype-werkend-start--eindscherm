@@ -8,6 +8,7 @@ Lives lives = new Lives();
 StartScreen start = new StartScreen();
 EndScreen end= new EndScreen();
 Score score = new Score();
+ScoreBoard scoreBoard = new ScoreBoard();
 float punten;
 int stage = 1;
 int again;
@@ -54,6 +55,7 @@ void setup() {
   slow.init();
   livespu.init();
   end.init();
+  scoreBoard.init();
 
   lanes[0] = 0;
   lanes[1] = 100;
@@ -61,8 +63,8 @@ void setup() {
   lanes[3] = 300;
   lanes[4] = 400;
   lanes[5] = 500;
- 
-   // Images must be in the "data" directory to load correctly
+
+  // Images must be in the "data" directory to load correctly
   img = loadImage("enemy.png");
   img2 = loadImage("collision.png"); 
   bg1 = loadImage("bg1.jpg");   
@@ -71,26 +73,25 @@ void setup() {
   pow3 = loadImage("powh.png");  
   pow4 = loadImage("pow4.png");   
   plyr = loadImage("plyr.png"); 
-  
+
   //inladen van soundfile uit de main map//
-      //sound 1//
-path = sketchPath(audioName1);
-file = new SoundFile(this, path);
-      
-      //sound 2//
-path2 = sketchPath(audioName2);
-file2 = new SoundFile(this, path2);
-//sound 2 start//
-file2.play();
+  //sound 1//
+  path = sketchPath(audioName1);
+  file = new SoundFile(this, path);
 
-      //sound 3//
-path3 = sketchPath(audioName3);
-file3 = new SoundFile(this, path3);
+  //sound 2//
+  path2 = sketchPath(audioName2);
+  file2 = new SoundFile(this, path2);
+  //sound 2 start//
+  file2.play();
 
-      //sound 4//
-path4 = sketchPath(audioName4);
-file4 = new SoundFile(this, path4);
+  //sound 3//
+  path3 = sketchPath(audioName3);
+  file3 = new SoundFile(this, path3);
 
+  //sound 4//
+  path4 = sketchPath(audioName4);
+  file4 = new SoundFile(this, path4);
 }
 
 //Updating all classes
@@ -169,6 +170,7 @@ void draw() {
     keyReleased();
   }
   if ( stage ==3) {
+    again = 0;
     //haalt de setup en draw uit EndScreen
     end.setup();
     end.draw();
@@ -177,7 +179,15 @@ void draw() {
       score.reset();
       setup();
       stage =1;
-      again = 3;
+    } else if (again ==2) {
+      stage = 4;
+    }
+    if (stage == 4) {
+      scoreBoard.highScore();
+      scoreBoard.draw(); 
+      if (again == 3) {
+        stage = 3;
+      }
     }
   }
 }
